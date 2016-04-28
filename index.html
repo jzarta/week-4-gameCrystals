@@ -32,8 +32,6 @@
 		<p>Each time when the game starts, the game will change the values of each crystal.</p>
 </p>
 
-<div id="win-lose"></div>
-
 <br>
 	  <div>Generated Number:<span id="Generated"></span></div>
   	<br>
@@ -42,8 +40,7 @@
   		<div id="win-loss-tracker">
     	
     <div><h3>Wins: </h3><span id="wins"></span></div>
-    <div><h3>Losses: </h3><span id="losses"></span></div>
-    
+    <div><h3>Losses: </h3><span id="losses"></span></div>    
 
   	<img src="../week-4-gameCrystals/images/Cristal 1.png" alt="crystalOne" style="width:100px;height:95px;">
 	<img src="../week-4-gameCrystals/images/Cristal 2.png" alt="crystalTwo" style="width:100px;height:95px;">
@@ -59,6 +56,7 @@
 </body>
 
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.js"></script>
+
 <script type="text/javascript">
 
 //Variables
@@ -73,7 +71,7 @@ var crystalTwo = 0;
 var crystalThree = 0;
 var crystalFour = 0;
 
-//jQury section 
+//jQuery section 
 
 function yourNumber(min, max) {
         return Math.floor(Math.random() * (max - min + 1) + min);
@@ -82,7 +80,6 @@ var check = function () {
         
         if (yourNumber == randomNumber) {
             wins++;
-            $('#')
             $('#wins').html('<h3>' + wins + '</h3>');
             alert("You Win!");
             restart();
