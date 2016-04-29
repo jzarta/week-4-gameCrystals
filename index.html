@@ -8,15 +8,13 @@
 
 <title>Crystal Collector</title>
 
-<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
-<link rel="stylesheet" type="text/css" href="mystyle.css">
+<link rel="stylesheet" type="text/css" href="css/myreset.css">
+<link rel="stylesheet" type="text/css" href="css/mystyle.css">
 
 <link href='https://fonts.googleapis.com/css?family=Noto+Sans' rel='stylesheet' type='text/css'>
 </head>
 
-<body style="background-color: #05668D;">
-	
-
+<body>
 
 	<h1>Crystal Collector</h1>
 
@@ -33,71 +31,48 @@
 </p>
 
 <br>
-	  <div>Generated Number:<span id="Generated"></span></div>
+	  <div>Generated Number:<p id="generated"></p></div>
   	<br>
   		
   		<div id="win-lose"></div>
   		<div id="win-loss-tracker">
     	
-    <div><h3>Wins: </h3><span id="wins"></span></div>
-    <div><h3>Losses: </h3><span id="losses"></span></div>    
+    <div><h3>Wins: </h3><p id="wins"></p></div>
+    <div><h3>Losses: </h3><p id="losses"></p></div>    
 
-  	<img src="../week-4-gameCrystals/images/Cristal 1.png" alt="crystalOne" style="width:100px;height:95px;">
+  	<img id="crystalOne" src="../week-4-gameCrystals/images/Cristal 1.png" alt="crystalOne" style="width:100px;height:95px;">
 	<img src="../week-4-gameCrystals/images/Cristal 2.png" alt="crystalTwo" style="width:100px;height:95px;">
 	<img src="../week-4-gameCrystals/images/Cristal 3.png" alt="crystalThree" style="width:100px;height:95px;">
 	<img src="../week-4-gameCrystals/images/Cristal 4.png" alt="crystalFour" style="width:100px;height:95px;">
 
-<div><h3>Your total score</h3> <span id="yourTotalScore">
+<div><h3>Your total score</h3> <p id="yourTotalScore">
 	
-</span></div>
+</p></div>
 
 </div>
-
-</body>
 
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.js"></script>
 
 <script type="text/javascript">
 
 //Variables
-
-var randomNumber = 36;
+$( document ).ready(function(){
+//var randomNumber = 36;
 var yourNumber = 0;
 var wins = 0;
 var losses = 0;
 var yourTotalScore = 0;
-var crystalOne = 0;
-var crystalTwo = 0;
-var crystalThree = 0;
-var crystalFour = 0;
+//var crystalOne = 0;
+//var crystalTwo = 0;
+//var crystalThree = 0;
+//var crystalFour = 0;
 
 //jQuery section 
-
-function yourNumber(min, max) {
-        return Math.floor(Math.random() * (max - min + 1) + min);
-    }
-var check = function () {
-        
-        if (yourNumber == randomNumber) {
-            wins++;
-            $('#wins').html('<h3>' + wins + '</h3>');
-            alert("You Win!");
-            restart();
-        }
-        if (yourNumber > randomNumber) {
-            yourLosses++;
-            $('#losses').html('<h3>' + losses + '</h3>');
-            alert("You Lose!");
-            restart();
-
-
-        }
-    }
+var randomNumber = Math.floor(Math.random() * 36 +1);
+$('#generated').html(randomNumber);
 
     var restart = function () {
-        yourNumber = 0;
-        randomNumber();
-
+        
         crystalOne = Math.floor((Math.random() * 12) + 1);
         console.log(crystalOne);
         crystalTwo = Math.floor((Math.random() * 12) + 1);
@@ -109,29 +84,51 @@ var check = function () {
 
     }
 
+ var newYourNumber =  function yourNumber(min, max) {
+        return Math.floor(Math.random() * (max - min + 1) + min);
+ };
 //var Clicks 
 $("#crystalOne").on("click", function(){
-     total += random1;
-     $(totalscore).html("<img>crystalOne</img>" + total);
-     check();
+    var randomOnClick = newYourNumber(1 , 12);
+    console.log(randomOnClick);
+    yourTotalScore = yourTotalScore + randomOnClick;
+    $("#yourTotalScore").html(yourTotalScore);
+
+    if (yourTotalScore == randomNumber) {
+    	wins++;
+    	$('#wins').html(wins);
+    }
+    if (yourTotalScore > randomNumber){
+    	losses++;
+    	$("#losses").html(losses);
+    }
+
+   
+     //check();
 });
         
 $("#crystalTwo").on("click", function(){
-     total += random2;
-     $(totalscore).html("<img>crystalTwo</img>" + total);
-     check();
+     //total += random2;
+     //$(totalscore).html("<img>crystalTwo</img>" + total);
+    
+    var randomOnClick = newYourNumber(1 , 12); 
+
+    
 });
 $("#crystalThree").on("click", function(){
-     total += random3;
-     $(totalscore).html("<img>crystalThree</img>" + total);
-     check();
+     //total += random3;
+     //$(totalscore).html("<img>crystalThree</img>" + total);
+    var randomOnClick = newYourNumber(1 , 12);      
+
+  
 });
 $("#crystalFour").on("click", function(){
-     total += random4;
-     $(totalscore).html("<img>crystalFour</img>" + total);
-     check();
+     //total += random4;
+     //$(totalscore).html("<img>crystalFour</img>" + total);
+    var randomOnClick = newYourNumber(1 , 12);  
+    
 });
-
+});
 </script>
-
+</body>
 </html>

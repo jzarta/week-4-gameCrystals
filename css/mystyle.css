@@ -1,15 +1,18 @@
 body{
-	background-image: url("../week-4-gameCrystals/images/background.png");
+	background-image: url("../images/background.png");
+	background-size: 1054px, 750px;
+	background-repeat: no-repeat;
 	font-size: 18px;
 	line-height: 34px;
 	font-family: font-family: 'Noto Sans', sans-serif;
-	color: #777;
+	color: #00A896;
 }
 h1,
+
 p{
 	font-family: font-family: 'Noto Sans', sans-serif;
 	font-size: 25px;
-	color: #E63946;
+	color: #00A896;
 }
 .container {
 	width: 100%;
