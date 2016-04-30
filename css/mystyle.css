@@ -1,27 +1,35 @@
 body{
-	background-color: #011627;
+	background-image: url(../images/background3.png);
 	background-size: 1280px, 1024px;
 	background-repeat: no-repeat;
 	font-size: 18px;
 	line-height: 34px;
-	font-family: 'Ubuntu', sans-serif;
+	font-family: 'Oswald', sans-serif;;
 	color: #EFEFEF;
 }
+img {
+    border-radius: 8px;
+}
 h1{
-	font-family: font-family: 'Ubuntu', sans-serif;
-	color: #EFEFEF;
+	font-family: font-family: 'Oswald', sans-serif;;
+	color: #EF233C;
 	font-size: 28; 
+}
+h2{
+	font-family: font-family: 'Oswald', sans-serif;;
+	color: #EF233C;
+	font-size: 28;
 }
 
 h3{
-	font-family: font-family: 'Ubuntu', sans-serif;
-	color: #EFEFEF;
+	font-family: font-family: 'Oswald', sans-serif;;
+	color: #EF233C;
 }
 
 p{
-	font-family: font-family: 'Ubuntu', sans-serif;
-	font-size: 18px;
-	color: #EFEFEF;
+	font-family: font-family: 'Oswald', sans-serif;;
+	font-size: 14px;
+	color: #EF233C;
 }
 
 
