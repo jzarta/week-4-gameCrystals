@@ -10,11 +10,15 @@
 
 <link rel="stylesheet" type="text/css" href="css/myreset.css">
 <link rel="stylesheet" type="text/css" href="css/mystyle.css">
+<link href='https://fonts.googleapis.com/css?family=Ubuntu:300italic,300' rel='stylesheet' type='text/css'>
 
-<link href='https://fonts.googleapis.com/css?family=Noto+Sans' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
 </head>
 
 <body>
+
+ </div>
 
 	<h1>Crystal Collector</h1>
 
@@ -87,7 +91,9 @@ $('#generated').html(randomNumber);
  var newYourNumber =  function yourNumber(min, max) {
         return Math.floor(Math.random() * (max - min + 1) + min);
  };
+
 //var Clicks 
+
 $("#crystalOne").on("click", function(){
     var randomOnClick = newYourNumber(1 , 12);
     console.log(randomOnClick);
@@ -103,31 +109,23 @@ $("#crystalOne").on("click", function(){
     	$("#losses").html(losses);
     }
 
-   
-     //check();
 });
         
 $("#crystalTwo").on("click", function(){
-     //total += random2;
-     //$(totalscore).html("<img>crystalTwo</img>" + total);
-    
-    var randomOnClick = newYourNumber(1 , 12); 
-
-    
+  var randomOnClick = newYourNumber(1 , 12);
+  console.log(randomOnClick);
+  yourTotalScore = yourTotalScore + randomOnClick;
+  $("#yourTotalScore").html(yourTotalScore);   
 });
+
 $("#crystalThree").on("click", function(){
-     //total += random3;
-     //$(totalscore).html("<img>crystalThree</img>" + total);
-    var randomOnClick = newYourNumber(1 , 12);      
+    
+});
 
-  
-});
 $("#crystalFour").on("click", function(){
-     //total += random4;
-     //$(totalscore).html("<img>crystalFour</img>" + total);
-    var randomOnClick = newYourNumber(1 , 12);  
-    
+  
 });
+
 });
 </script>
 </body>
